@@ -89,7 +89,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "Andhra Mini Transport & Travels" },
       { property: "og:type", content: "website" },
+      { property: "og:title", content: "Andhra Mini Transport & Travels — Packers and Movers, Visakhapatnam" },
+      {
+        property: "og:description",
+        content:
+          "Packers and movers in Visakhapatnam since 1993. Household shifting, vehicle transportation, warehousing and corporate relocation across India.",
+      },
+      { property: "og:image", content: "/favicon.jpg" },
+      { property: "og:image:type", content: "image/jpeg" },
+      { property: "og:image:width", content: "1254" },
+      { property: "og:image:height", content: "1254" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Andhra Mini Transport & Travels — Packers and Movers, Visakhapatnam" },
+      {
+        name: "twitter:description",
+        content:
+          "Packers and movers in Visakhapatnam since 1993. Household shifting, vehicle transportation, warehousing and corporate relocation across India.",
+      },
+      { name: "twitter:image", content: "/favicon.jpg" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -99,7 +116,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap",
       },
+      { rel: "icon", href: "/favicon.jpg", type: "image/jpeg" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
     ],
   }),
   shellComponent: RootShell,
