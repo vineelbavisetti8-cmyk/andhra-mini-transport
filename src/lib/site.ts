@@ -6,7 +6,7 @@ export const site = {
   phone: "09440147473",
   phoneIntl: "+919440147473",
   whatsappNumber: "919440147473",
-  rating: { value: "5.0", count: 7 },
+  rating: { value: "5.0", count: "200+", reviewCount: 200 },
   address: {
     street: "Petrol Bunk, beside Isukathota, APGO Colony, Sector 4/2, MVP Colony",
     locality: "Visakhapatnam",
@@ -82,7 +82,7 @@ export function localBusinessJsonLd(pageName: string) {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: site.rating.value,
-      reviewCount: site.rating.count,
+      reviewCount: site.rating.reviewCount,
     },
   };
 }

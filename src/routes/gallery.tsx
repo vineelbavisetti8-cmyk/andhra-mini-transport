@@ -1,10 +1,18 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from '@tanstack/react-router'
 import corporateImg from "@/assets/corporate.jpg";
 import heroImg from "@/assets/hero-truck.jpg";
-import householdImg from "@/assets/household.jpg";
-import intercityImg from "@/assets/intercity.jpg";
-import vehicleImg from "@/assets/vehicle.jpg";
-import warehouseImg from "@/assets/warehouse.jpg";
+import hhPackImg from "@/assets/hh-packing.png";
+import hhLoadImg from "@/assets/hh-loading.png";
+import hhDeliverImg from "@/assets/hh-delivery.png";
+import intercityHighwayImg from "@/assets/intercity-highway.png";
+import intercityPlanningImg from "@/assets/intercity-planning.png";
+import intercityUnloadImg from "@/assets/intercity-unloading.png";
+import vehicleCarrierImg from "@/assets/vehicle-carrier.png";
+import vehicleLoadingImg from "@/assets/vehicle-loading.png";
+import warehouseInteriorImg from "@/assets/warehouse-interior.png";
+import warehouseInventoryImg from "@/assets/warehouse-inventory.png";
+import corporatePackImg from "@/assets/corporate-packing.png";
+import corporateLoadImg from "@/assets/corporate-loading.png";
 import { JsonLd, QuoteCta, SectionHeading } from "@/components/site/Blocks";
 import { localBusinessJsonLd, pageMeta } from "@/lib/site";
 
@@ -26,33 +34,75 @@ const galleryItems = [
     span: "lg:col-span-2",
   },
   {
-    src: householdImg,
-    alt: "Household goods packed and wrapped for a home relocation",
+    src: hhPackImg,
+    alt: "Household furniture wrapped with protective bubble wrap",
     caption: "Household packing",
     span: "",
   },
   {
-    src: vehicleImg,
-    alt: "Car being secured on a vehicle carrier for transport",
-    caption: "Vehicle transportation",
+    src: hhLoadImg,
+    alt: "Movers loading furniture and cartons via ramp",
+    caption: "Ramp loading",
     span: "",
   },
   {
-    src: warehouseImg,
-    alt: "Organised warehouse facility with stacked goods in storage",
-    caption: "Warehousing and storage",
+    src: hhDeliverImg,
+    alt: "Household furniture safely placed inside new home",
+    caption: "Home delivery & placement",
     span: "",
   },
   {
-    src: intercityImg,
-    alt: "Transport truck on a national highway for intercity relocation",
-    caption: "Intercity relocation",
+    src: vehicleCarrierImg,
+    alt: "Specialized vehicle carrier on highway",
+    caption: "Vehicle carrier",
     span: "",
   },
   {
-    src: corporateImg,
-    alt: "Office furniture staged for corporate relocation",
-    caption: "Corporate relocation",
+    src: vehicleLoadingImg,
+    alt: "Car being carefully loaded onto transport ramp",
+    caption: "Car ramp loading",
+    span: "",
+  },
+  {
+    src: intercityHighwayImg,
+    alt: "Container transport truck on national highway",
+    caption: "Intercity highway transit",
+    span: "lg:col-span-2",
+  },
+  {
+    src: intercityPlanningImg,
+    alt: "Logistics coordinator mapping transit routes",
+    caption: "Route & transit planning",
+    span: "",
+  },
+  {
+    src: intercityUnloadImg,
+    alt: "Unloading goods at destination location",
+    caption: "Destination unloading",
+    span: "",
+  },
+  {
+    src: warehouseInteriorImg,
+    alt: "Modern warehouse facility with racks and forklift",
+    caption: "Warehousing & storage",
+    span: "",
+  },
+  {
+    src: warehouseInventoryImg,
+    alt: "Warehouse staff scanning inventory barcodes",
+    caption: "Barcoded inventory tracking",
+    span: "",
+  },
+  {
+    src: corporatePackImg,
+    alt: "IT equipment and monitors packed for office relocation",
+    caption: "Corporate IT packing",
+    span: "",
+  },
+  {
+    src: corporateLoadImg,
+    alt: "Office movers navigating equipment through building lobby",
+    caption: "Office equipment moving",
     span: "lg:col-span-2",
   },
 ] as const;

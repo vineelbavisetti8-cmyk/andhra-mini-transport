@@ -9,6 +9,8 @@ import {
   Truck,
 } from "lucide-react";
 import vehicleImg from "@/assets/vehicle.jpg";
+import vehicleCarrierImg from "@/assets/vehicle-carrier.png";
+import vehicleLoadingImg from "@/assets/vehicle-loading.png";
 import { InfoCard, JsonLd, PageHero, QuoteCta, SectionHeading } from "@/components/site/Blocks";
 import { localBusinessJsonLd, pageMeta, whatsappLink } from "@/lib/site";
 
@@ -21,6 +23,27 @@ export const Route = createFileRoute("/services/vehicle-transportation")({
     }),
   component: VehicleTransportation,
 });
+
+const serviceGallery = [
+  {
+    src: vehicleCarrierImg,
+    alt: "Multi-car carrier vehicle on highway",
+    title: "Dedicated Car Carriers",
+    desc: "Multi-level specialised car carriers for damage-free long-distance highway transport.",
+  },
+  {
+    src: vehicleLoadingImg,
+    alt: "Careful driving of sedan onto car carrier ramp",
+    title: "Precision Ramp Loading",
+    desc: "Experienced drivers and spotters navigating vehicles up secure ramp systems.",
+  },
+  {
+    src: vehicleImg,
+    alt: "Vehicle secured with safety tie downs",
+    title: "Wheel Chocking & Tie-Downs",
+    desc: "Multi-point strapping and wheel locking to guarantee zero movement during the journey.",
+  },
+];
 
 const vehicleTypes = [
   {
@@ -124,8 +147,40 @@ function VehicleTransportation() {
         </div>
       </section>
 
-      {/* Safety messaging */}
+      {/* Photo Gallery */}
       <section className="section">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Carrier Operations"
+            title="Safe vehicle transport in action"
+            intro="Witness how we load, strap, and transport cars and two-wheelers across state lines."
+          />
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {serviceGallery.map((item) => (
+              <div
+                key={item.title}
+                className="group overflow-hidden rounded-sm border border-border bg-card shadow-card transition-all hover:border-gold/60"
+              >
+                <div className="aspect-[4/3] overflow-hidden bg-muted">
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-navy-deep">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Safety messaging */}
+      <section className="bg-secondary section">
         <div className="container-page">
           <SectionHeading
             eyebrow="Safety and accountability"

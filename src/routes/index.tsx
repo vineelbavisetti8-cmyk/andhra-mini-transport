@@ -299,10 +299,12 @@ function Home() {
           <div className="border border-border shadow-card">
             <iframe
               title="Andhra Mini Transport location map"
-              src="https://www.google.com/maps?q=MVP%20Colony%20Sector%204%20Visakhapatnam%20530017&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3800.068300504791!2d83.32542347517312!3d17.741420683207394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ0JzI5LjEiTiA4M8KwMTknNDAuOCJF!5e0!3m2!1sen!2sin!4v1788933182929!5m2!1sen!2sin"
               className="h-[380px] w-full"
+              style={{ border: 0 }}
+              allowFullScreen
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
+              referrerPolicy="strict-origin-when-cross-origin"
             />
           </div>
         </div>

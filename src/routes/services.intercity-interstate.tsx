@@ -10,6 +10,9 @@ import {
   Truck,
 } from "lucide-react";
 import intercityImg from "@/assets/intercity.jpg";
+import intercityHighwayImg from "@/assets/intercity-highway.png";
+import intercityPlanningImg from "@/assets/intercity-planning.png";
+import intercityUnloadImg from "@/assets/intercity-unloading.png";
 import { InfoCard, JsonLd, PageHero, QuoteCta, SectionHeading } from "@/components/site/Blocks";
 import { localBusinessJsonLd, pageMeta, site, telLink, whatsappLink } from "@/lib/site";
 
@@ -22,6 +25,27 @@ export const Route = createFileRoute("/services/intercity-interstate")({
     }),
   component: IntercityInterstate,
 });
+
+const serviceGallery = [
+  {
+    src: intercityHighwayImg,
+    alt: "Long haul transport vehicle on national highway",
+    title: "Pan-India Transit",
+    desc: "Long-haul closed container vehicles equipped for safe all-weather interstate transit.",
+  },
+  {
+    src: intercityPlanningImg,
+    alt: "Logistics coordinator planning transit route and schedule",
+    title: "Route & Schedule Planning",
+    desc: "Dedicated logistics planning, route mapping, and continuous transit monitoring.",
+  },
+  {
+    src: intercityUnloadImg,
+    alt: "Crew unloading goods at destination apartment",
+    title: "Destination Unloading",
+    desc: "Professional delivery and careful placement at your new home in any Indian city.",
+  },
+];
 
 const coverage = [
   "Door-to-door service from your current address to the new one, regardless of distance.",
@@ -110,8 +134,40 @@ function IntercityInterstate() {
         </div>
       </section>
 
-      {/* Trust signals */}
+      {/* Photo Gallery */}
       <section className="section">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Fleet & Operations"
+            title="Intercity relocation on the ground"
+            intro="A visual look at our long-haul fleet, route coordination, and destination arrival procedures."
+          />
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {serviceGallery.map((item) => (
+              <div
+                key={item.title}
+                className="group overflow-hidden rounded-sm border border-border bg-card shadow-card transition-all hover:border-gold/60"
+              >
+                <div className="aspect-[4/3] overflow-hidden bg-muted">
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-navy-deep">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trust signals */}
+      <section className="bg-secondary section">
         <div className="container-page">
           <SectionHeading
             eyebrow="Why it works"

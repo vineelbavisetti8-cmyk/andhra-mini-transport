@@ -10,6 +10,8 @@ import {
   Truck,
 } from "lucide-react";
 import corporateImg from "@/assets/corporate.jpg";
+import corporatePackImg from "@/assets/corporate-packing.png";
+import corporateLoadImg from "@/assets/corporate-loading.png";
 import { InfoCard, JsonLd, PageHero, QuoteCta, SectionHeading } from "@/components/site/Blocks";
 import { localBusinessJsonLd, pageMeta, site, telLink, whatsappLink } from "@/lib/site";
 
@@ -22,6 +24,27 @@ export const Route = createFileRoute("/services/corporate-relocation")({
     }),
   component: CorporateRelocation,
 });
+
+const serviceGallery = [
+  {
+    src: corporatePackImg,
+    alt: "Movers packing computer monitors and office workstations",
+    title: "IT & Workstation Packing",
+    desc: "Anti-static bubble wrap, screen protectors, and labelled bins for each desk.",
+  },
+  {
+    src: corporateLoadImg,
+    alt: "Crew moving office chairs and equipment through corporate building lobby",
+    title: "Elevator & Lobby Logistics",
+    desc: "Swift, quiet, and coordinated transfer using freight elevators to prevent disruption.",
+  },
+  {
+    src: corporateImg,
+    alt: "Office setup and staged furniture",
+    title: "Destination Floor Plan Setup",
+    desc: "Placement and assembly according to your exact floor plan so staff resume work immediately.",
+  },
+];
 
 const whatWeHandle = [
   {
@@ -112,8 +135,40 @@ function CorporateRelocation() {
         </div>
       </section>
 
-      {/* Trust cards */}
+      {/* Photo Gallery */}
       <section className="section">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Corporate Execution"
+            title="Office relocation in motion"
+            intro="Explore how our specialist movers pack delicate electronics, handle office furniture, and minimize office downtime."
+          />
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {serviceGallery.map((item) => (
+              <div
+                key={item.title}
+                className="group overflow-hidden rounded-sm border border-border bg-card shadow-card transition-all hover:border-gold/60"
+              >
+                <div className="aspect-[4/3] overflow-hidden bg-muted">
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-navy-deep">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trust cards */}
+      <section className="bg-secondary section">
         <div className="container-page">
           <SectionHeading
             eyebrow="Why businesses choose us"

@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Archive, CheckCircle, ClipboardList, Lock, MessageCircle, Shield } from "lucide-react";
 import warehouseImg from "@/assets/warehouse.jpg";
+import warehouseInteriorImg from "@/assets/warehouse-interior.png";
+import warehouseInventoryImg from "@/assets/warehouse-inventory.png";
 import { InfoCard, JsonLd, PageHero, QuoteCta, SectionHeading } from "@/components/site/Blocks";
 import { localBusinessJsonLd, pageMeta, whatsappLink } from "@/lib/site";
 
@@ -13,6 +15,27 @@ export const Route = createFileRoute("/services/warehousing")({
     }),
   component: Warehousing,
 });
+
+const serviceGallery = [
+  {
+    src: warehouseInteriorImg,
+    alt: "Organized warehouse interior with industrial shelving and forklift",
+    title: "Modern Storage Facility",
+    desc: "Spacious, multi-tier racking warehouse equipped with industrial handling machinery.",
+  },
+  {
+    src: warehouseInventoryImg,
+    alt: "Warehouse staff scanning barcodes on palletized boxes",
+    title: "Barcoded Inventory Control",
+    desc: "Systematic barcode tagging and logging of every single box for flawless tracking.",
+  },
+  {
+    src: warehouseImg,
+    alt: "Clean organized storage units with goods",
+    title: "Secure & Pest-Controlled Bays",
+    desc: "Climate-controlled, clean, and 24/7 monitored bays protecting your belongings.",
+  },
+];
 
 const storageTypes = [
   {
@@ -68,6 +91,38 @@ function Warehousing() {
                 </span>
                 <h3 className="mt-5 text-2xl text-navy-deep">{t.title}</h3>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t.detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Photo Gallery */}
+      <section className="section">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Storage Facilities"
+            title="Inside our warehousing units"
+            intro="Take a look at how items are catalogued, shelved, and protected in our Visakhapatnam storage hubs."
+          />
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {serviceGallery.map((item) => (
+              <div
+                key={item.title}
+                className="group overflow-hidden rounded-sm border border-border bg-card shadow-card transition-all hover:border-gold/60"
+              >
+                <div className="aspect-[4/3] overflow-hidden bg-muted">
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-navy-deep">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>

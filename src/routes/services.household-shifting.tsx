@@ -10,6 +10,9 @@ import {
   Truck,
 } from "lucide-react";
 import householdImg from "@/assets/household.jpg";
+import hhPackImg from "@/assets/hh-packing.png";
+import hhLoadImg from "@/assets/hh-loading.png";
+import hhDeliverImg from "@/assets/hh-delivery.png";
 import { InfoCard, JsonLd, PageHero, QuoteCta, SectionHeading } from "@/components/site/Blocks";
 import { localBusinessJsonLd, pageMeta, whatsappLink } from "@/lib/site";
 
@@ -22,6 +25,27 @@ export const Route = createFileRoute("/services/household-shifting")({
     }),
   component: HouseholdShifting,
 });
+
+const serviceGallery = [
+  {
+    src: hhPackImg,
+    alt: "Professional packing with bubble wrap and protective materials",
+    title: "Multi-Layer Packing",
+    desc: "Bubble wrap, corrugated sheets, and stretch film safeguard furniture against scratches.",
+  },
+  {
+    src: hhLoadImg,
+    alt: "Loading packed goods into moving truck ramp",
+    title: "Secure Ramp Loading",
+    desc: "Heavy items loaded via ramps with secure stacking to eliminate shifting during transit.",
+  },
+  {
+    src: hhDeliverImg,
+    alt: "Safe delivery and placement inside customer home",
+    title: "Room-by-Room Delivery",
+    desc: "Unloaded and placed directly into your designated rooms with full inventory sign-off.",
+  },
+];
 
 const whatWePack = [
   {
@@ -135,8 +159,40 @@ function HouseholdShifting() {
         </div>
       </section>
 
-      {/* Trust / safety */}
+      {/* Photo Gallery */}
       <section className="section">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="On the Ground"
+            title="Our packing & shifting in action"
+            intro="Real glimpse of our trained team handling household goods with complete care and systematic protection."
+          />
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {serviceGallery.map((item) => (
+              <div
+                key={item.title}
+                className="group overflow-hidden rounded-sm border border-border bg-card shadow-card transition-all hover:border-gold/60"
+              >
+                <div className="aspect-[4/3] overflow-hidden bg-muted">
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-navy-deep">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trust / safety */}
+      <section className="bg-secondary section">
         <div className="container-page">
           <SectionHeading
             eyebrow="Safe handling"
